@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pr.ivanov.task.controllers.MainController">
+   <GridPane fx:id="gridTop" prefHeight="44.0" prefWidth="600.0" style="-fx-background-color: #9c9c9c;" xmlns:fx="http://javafx.com/fxml/1">
+      <columnConstraints>
+         <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" />
+         <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" />
+         <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" />
+      </columnConstraints>
+      <rowConstraints>
+         <RowConstraints minHeight="30.0" vgrow="ALWAYS" />
+      </rowConstraints>
+      <children>
+         <HBox alignment="CENTER_LEFT" GridPane.columnIndex="0">
+            <children>
+               <Button style="-fx-font-size: 14; -fx-background-radius: 5; -fx-background-color: #e8e8e8;" text="Back" />
+            </children>
+            <padding>
+               <Insets left="15.0" />
+            </padding>
+         </HBox>
+         <HBox alignment="CENTER" GridPane.columnIndex="1">
+            <children>
+               <Label style="-fx-font-size: 25; -fx-font-weight: bold;" text="Marathon Skills 2016" textFill="#ececec" />
+            </children>
+         </HBox>
+         <HBox alignment="CENTER_RIGHT" GridPane.columnIndex="2">
+            <children>
+               <Button style="-fx-font-size: 14; -fx-background-radius: 5; -fx-background-color: #e8e8e8;" text="Logout" />
+            </children>
+            <padding>
+               <Insets right="15.0" />
+            </padding>
+         </HBox>
+      </children>
+   </GridPane>
+   <!-- Центральный GridPane -->
+   <GridPane fx:id="gridCenter" style="-fx-background-color: #d9d9d9;" VBox.vgrow="ALWAYS">
+      <columnConstraints>
+         <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" />
+         <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" />
+         <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" />
+      </columnConstraints>
+      <rowConstraints>
+         <RowConstraints minHeight="10.0" vgrow="ALWAYS" />
+      </rowConstraints>
+      <children>
+         <VBox alignment="CENTER" spacing="20" GridPane.columnIndex="1">
+            <children>
+               <Label style="-fx-font-size: 25; -fx-font-weight: bold; -fx-font-style: italic;" text="Москва, Россия" textFill="#8e8e8e">
+                  <font>
+                     <Font name="Arial Bold" />
+                  </font></Label>
+               <Label style="-fx-font-size: 25; -fx-font-weight: bold; -fx-font-style: italic;" text="среда 21 октября 2016" textFill="#8e8e8e">
+                  <font>
+                     <Font name="Arial Bold" />
+                  </font>
+               </Label>
+               <Region prefHeight="100.0" />
+               <Button onAction="#onClickExchange" style="-fx-font-size: 16; -fx-pref-width: 300; -fx-pref-height: 50; -fx-background-radius: 7; -fx-background-color: #a6a6a6; -fx-text-fill: white;" text="Я хочу стать бегуном" />
+               <Button style="-fx-font-size: 16; -fx-pref-width: 300; -fx-pref-height: 50; -fx-background-radius: 7; -fx-background-color: #a6a6a6; -fx-text-fill: white;" text="Я хочу стать спонсором бегуна" />
+               <Button style="-fx-font-size: 16; -fx-pref-width: 300; -fx-pref-height: 50; -fx-background-radius: 7; -fx-background-color: #a6a6a6; -fx-text-fill: white;" text="Я хочу узнать больше о событии" />
+            </children>
+         </VBox>
+         <HBox alignment="CENTER" GridPane.columnIndex="0" />
+         <HBox alignment="BOTTOM_RIGHT" GridPane.columnIndex="2">
+            <children>
+               <Button mnemonicParsing="false" text="Login" />
+            </children>
+            <padding>
+               <Insets bottom="15.0" right="15.0" />
+            </padding></HBox>
+      </children>
+   </GridPane>
+
+   <!-- Нижний GridPane -->
+   <GridPane fx:id="gridBottom" prefHeight="61.0" prefWidth="600.0" style="-fx-background-color: #9c9c9c;" xmlns:fx="http://javafx.com/fxml">
+      <columnConstraints>
+         <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" />
+         <ColumnConstraints hgrow="NEVER" minWidth="10.0" prefWidth="81.39998779296877" />
+      </columnConstraints>
+      <rowConstraints>
+         <RowConstraints minHeight="30.0" vgrow="ALWAYS" />
+      </rowConstraints>
+      <children>
+         <HBox fx:id="mainVBox" alignment="CENTER" fillHeight="true" GridPane.columnIndex="0">
+            <children>
+               <Label fx:id="marathonLabel" style="-fx-font-size: 16;" text="8 дней 18 часов 18 минут до старта марафона!"/>
+            </children>
+         </HBox>
+
+      </children>
+   </GridPane>
+</VBox>
