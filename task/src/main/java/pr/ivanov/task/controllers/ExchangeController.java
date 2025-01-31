@@ -2,11 +2,21 @@ package pr.ivanov.task.controllers;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
+import pr.ivanov.task.util.MarathonTimer;
+
+import java.time.LocalDateTime;
 
 import static pr.ivanov.task.util.Manager.*;
 import static pr.ivanov.task.util.Manager.showStage;
 
 public class ExchangeController {
+
+    @FXML
+    private Label marathonLabel;
+
+    private MarathonTimer marathonTimer;
+
 
     public void onClickLogin(ActionEvent actionEvent) {
         previousPageFXML = "exchange-view.fxml";
@@ -29,5 +39,11 @@ public class ExchangeController {
 
     public void onClickCancel(ActionEvent actionEvent) {
         showStage(previousPageFXML, previousPageTitle);
+    }
+
+    public void initialize() {
+        // year , month , numMonth , HH , MM
+        LocalDateTime marathonTime = LocalDateTime.of(2025, 2, 4, 9, 0);
+        marathonTimer = new MarathonTimer(marathonLabel, marathonTime);
     }
 }

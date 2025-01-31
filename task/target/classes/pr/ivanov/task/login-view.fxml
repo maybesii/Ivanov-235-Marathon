@@ -109,7 +109,7 @@
          <children>
             <HBox fx:id="mainVBox" alignment="CENTER" fillHeight="true">
                <children>
-                  <Label fx:id="marathonLabel" style="-fx-font-size: 16;" text="8 дней 18 часов 18 минут до старта марафона!"/>
+                  <Label fx:id="marathonLabel" style="-fx-font-size: 16;" text="LOADING..." />
                </children>
                <padding>
                   <Insets bottom="5.0" />

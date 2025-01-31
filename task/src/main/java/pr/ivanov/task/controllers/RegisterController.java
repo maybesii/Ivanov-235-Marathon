@@ -8,8 +8,10 @@ import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.FileChooser;
+import pr.ivanov.task.util.MarathonTimer;
 
 import java.io.File;
+import java.time.LocalDateTime;
 
 import static pr.ivanov.task.util.Manager.*;
 
@@ -51,8 +53,14 @@ public class RegisterController {
     private TextField surnameET;
 
     @FXML
+    private Label marathonLabel;
+
+    private MarathonTimer marathonTimer;
+
+
+    @FXML
     void onClickCancel(ActionEvent event) {
-        showStage(previousPageFXML , previousPageTitle);
+        showStage(previousPageFXML, previousPageTitle);
     }
 
     @FXML
@@ -138,9 +146,12 @@ public class RegisterController {
     }
 
 
-
     @FXML
     public void initialize() {
+        // year , month , numMonth , HH , MM
+        LocalDateTime marathonTime = LocalDateTime.of(2025, 2, 4, 9, 0);
+        marathonTimer = new MarathonTimer(marathonLabel, marathonTime);
+
         countryCB.setItems(countries);
         sexCB.setItems(sexes);
 

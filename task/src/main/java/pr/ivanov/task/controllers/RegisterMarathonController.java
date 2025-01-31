@@ -6,6 +6,9 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
+import pr.ivanov.task.util.MarathonTimer;
+
+import java.time.LocalDateTime;
 
 import static pr.ivanov.task.util.Manager.*;
 
@@ -45,6 +48,11 @@ public class RegisterMarathonController {
     @FXML
     private VBox checkBoxes;
 
+    @FXML
+    private Label marathonLabel;
+
+    private MarathonTimer marathonTimer;
+
     public void onClickRegistration(ActionEvent actionEvent) {
         boolean er = false;
         if (!isAnySelectedCheckBox()) {
@@ -70,6 +78,10 @@ public class RegisterMarathonController {
 
     @FXML
     public void initialize() {
+        // year , month , numMonth , HH , MM
+        LocalDateTime marathonTime = LocalDateTime.of(2025, 2, 4, 9, 0);
+        marathonTimer = new MarathonTimer(marathonLabel, marathonTime);
+
         wherePaymentCB.setValue(wherePaymentCB.getItems().getFirst());
         toggleGroup = new ToggleGroup();
         option1.setToggleGroup(toggleGroup);
@@ -92,7 +104,7 @@ public class RegisterMarathonController {
         option3.selectedProperty().addListener((_, oldValue, newValue) -> {
             if (newValue) {
                 paymentFinal.set(paymentFinal.get() + 45);
-            }else {
+            } else {
                 paymentFinal.set(paymentFinal.get() - 45);
             }
             radioBoxes.setStyle("");

@@ -9,6 +9,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
 <BorderPane fx:id="borderPane" prefHeight="678.0" prefWidth="813.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pr.ivanov.task.controllers.runnerMenuController">
    <top>
@@ -65,19 +66,22 @@
                            <children>
                               <HBox alignment="CENTER" spacing="10.0">
                                  <children>
-                                    <Button style="-fx-font-size: 22; -fx-background-radius: 7; -fx-background-color: #a6a6a6; -fx-text-fill: white; -fx-pref-width: 200; -fx-pref-height: 50;" text="Регистрация на марафон" />
-                                    <Button style="-fx-font-size: 22; -fx-background-radius: 7; -fx-background-color: #a6a6a6; -fx-text-fill: white; -fx-pref-width: 200; -fx-pref-height: 50;" text="Мои результаты" />
+                                    <Button prefHeight="101.0" prefWidth="310.0" style="-fx-font-size: 15; -fx-background-radius: 7; -fx-background-color: #a6a6a6; -fx-text-fill: white; -fx-pref-width: 200; -fx-pref-height: 50;" text="Регистрация на марафон" />
+                                    <Button style="-fx-font-size: 15; -fx-background-radius: 7; -fx-background-color: #a6a6a6; -fx-text-fill: white; -fx-pref-width: 200; -fx-pref-height: 50;" text="Мои результаты" />
                                  </children>
                               </HBox>
                               <HBox alignment="CENTER" spacing="10.0">
                                  <children>
-                                    <Button style="-fx-font-size: 22; -fx-background-radius: 7; -fx-background-color: #a6a6a6; -fx-text-fill: white; -fx-pref-width: 200; -fx-pref-height: 50;" text="Редактирование профиля" />
-                                    <Button style="-fx-font-size: 22; -fx-background-radius: 7; -fx-background-color: #a6a6a6; -fx-text-fill: white; -fx-pref-width: 200; -fx-pref-height: 50;" text="Мои спонсоры" />
+                                    <Button style="-fx-font-size: 15; -fx-background-radius: 7; -fx-background-color: #a6a6a6; -fx-text-fill: white; -fx-pref-width: 200; -fx-pref-height: 50;" text="Редактирование профиля">
+                                       <font>
+                                          <Font size="5.0" />
+                                       </font></Button>
+                                    <Button style="-fx-font-size: 15; -fx-background-radius: 7; -fx-background-color: #a6a6a6; -fx-text-fill: white; -fx-pref-width: 200; -fx-pref-height: 50;" text="Мои спонсоры" />
                                  </children>
                               </HBox>
                               <HBox alignment="CENTER">
                                  <children>
-                                    <Button onAction="#onClickcontacts" style="-fx-font-size: 22; -fx-background-radius: 7; -fx-background-color: #a6a6a6; -fx-text-fill: white; -fx-pref-width: 200; -fx-pref-height: 50;" text="Контакты" />
+                                    <Button onAction="#onClickcontacts" style="-fx-font-size: 15; -fx-background-radius: 7; -fx-background-color: #a6a6a6; -fx-text-fill: white; -fx-pref-width: 200; -fx-pref-height: 50;" text="Контакты" />
                                  </children>
                               </HBox>
                            </children>
@@ -105,7 +109,7 @@
          <children>
             <HBox fx:id="mainVBox" alignment="CENTER" fillHeight="true">
                <children>
-                  <Label fx:id="marathonLabel" style="-fx-font-size: 16;" text="8 дней 18 часов 18 минут до старта марафона!" />
+                  <Label fx:id="marathonLabel" style="-fx-font-size: 16;" text="LOADING..." />
                </children>
                <padding>
                   <Insets bottom="5.0" />

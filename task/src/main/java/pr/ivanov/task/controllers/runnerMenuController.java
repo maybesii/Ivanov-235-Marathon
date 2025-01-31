@@ -1,6 +1,7 @@
 package pr.ivanov.task.controllers;
 
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
@@ -13,11 +14,24 @@ import javafx.scene.text.Text;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import pr.ivanov.task.util.MarathonTimer;
+
+import java.time.LocalDateTime;
 
 import static pr.ivanov.task.util.Manager.*;
 
 public class runnerMenuController {
+
+    @FXML
+    private Label marathonLabel;
+
+    private MarathonTimer marathonTimer;
+
     public void onClickCancel(ActionEvent actionEvent) {
+        // year , month , numMonth , HH , MM
+        LocalDateTime marathonTime = LocalDateTime.of(2025, 2, 4, 9, 0);
+        marathonTimer = new MarathonTimer(marathonLabel, marathonTime);
+
         previousPageFXML = "runnerMenu-view.fxml";
         previousPageTitle = "Marathon Skills 2016 - Runner Menu";
         showStage("thxForReg-view.fxml", "Marathon Skills 2016 - Registration confirmation");
@@ -26,7 +40,7 @@ public class runnerMenuController {
     public void goToHome(ActionEvent actionEvent) {
         previousPageFXML = "runnerMenu-view.fxml";
         previousPageTitle = "Marathon Skills 2016 - Runner Menu";
-        showStage("main-view.fxml" , "Marathon Skills 2016");
+        showStage("main-view.fxml", "Marathon Skills 2016");
     }
 
     public void onClickcontacts(ActionEvent actionEvent) {
